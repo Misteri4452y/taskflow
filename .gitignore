@@ -108,6 +108,7 @@ Thumbs.db
 client_secret_*.json
 token.pickle
 tokens/
+flow.pickle
 
 # VS Code settings
 .vscode/
@@ -119,4 +120,3 @@ tokens/
 *.bak
 *.swp
 *.tmp
-"flow.pickle" 
