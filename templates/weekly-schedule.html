@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}
+Weekly Schedule - TaskFlow
+{% endblock %}
+
+{% block style %}
+<!-- Custom weekly schedule table styles -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styleWeekly.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Weekly Schedule Table -->
+<section id="weekly-schedule">
+    <h2>Weekly Schedule</h2>
+    <table id="myTable" class="display">
+        <thead>
+            <tr>
+                <th>Day</th>
+                {% for hour in range(24) %}
+                <!-- Display each hour as a column header -->
+                <th>{{ "%02d:00"|format(hour) }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
+            <tr>
+                <!-- First cell displays the day name -->
+                <td>{{ day }}</td>
+                {% for hour in range(24) %}
+                <!-- Each cell has data attributes to associate with JS for task rendering -->
+                <td data-day="{{ day }}" data-hour="{{ "%02d:00"|format(hour) }}"></td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+<!-- Modal for viewing tasks in a time slot -->
+<div id="taskModal" class="modal" style="display:none;">
+    <div class="modal-content" id="modalContent">
+        <span class="close-modal-btn" onclick="closeModal('taskModal')">&times;</span>
+        <h4>Tasks Details</h4>
+        <!-- Dynamic task content will be appended here via JS -->
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- DataTables and custom script for handling interactivity -->
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}

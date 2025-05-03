@@ -1,0 +1,46 @@
+/* Main container for the contact section */
+.contact-card {
+    width: 500px;
+    margin: 60px auto; /* Centers the card horizontally and adds top margin */
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+/* Contact list styling */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 30px auto 0;
+    max-width: 400px;
+    text-align: left;
+}
+
+/* Individual contact items */
+.contact-list li {
+    margin-bottom: 15px;
+}
+
+/* Contact links */
+.contact-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+/* Hover effects for links */
+.contact-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Responsive - Smaller screens */
+@media (max-width: 600px) {
+    .contact-card {
+        width: 90%;
+        padding: 20px;
+    }
+}

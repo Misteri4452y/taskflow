@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contact - TaskFlow
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styleContact.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="contact-section">
+    <!-- Page heading -->
+    <h1>Contact Us</h1>
+
+    <!-- Contact instructions -->
+    <p>If you have any questions, feedback, or suggestions, feel free to reach out to us.</p>
+
+    <!-- Contact links -->
+    <ul class="contact-list">
+        <li>
+            📧 <a class="contact-link" href="mailto:hanochliran@gmail.com">hanochliran@gmail.com</a>
+        </li>
+        <li>
+            💼 <a class="contact-link" href="https://www.linkedin.com/in/liran-hanoch-b6500b291" target="_blank" rel="noopener noreferrer">
+                LinkedIn Profile
+            </a>
+        </li>
+    </ul>
+</section>
+{% endblock %}

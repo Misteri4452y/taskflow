@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+<!-- Registration form container -->
+<div class="form-container">
+    <h2>Register</h2>
+
+    <!-- New user registration form: submits data via POST to the same route -->
+    <form method="POST">
+        <!-- Username input field -->
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+
+        <!-- Password input field -->
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+
+        <!-- Submit button to register the user -->
+        <button type="submit">Register</button>
+    </form>
+
+    <!-- Link to the login page for users who already have an account -->
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+</div>
+{% endblock %}

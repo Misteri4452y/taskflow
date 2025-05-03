@@ -1,0 +1,6 @@
+/* Styles specific to the about.html page */
+
+#about p {
+    line-height: 1.6;
+    text-align: justify;
+}

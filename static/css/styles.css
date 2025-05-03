@@ -1,0 +1,375 @@
+/* ========== GLOBAL RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* ========== NAVBAR STYLES ========== */
+.navbar {
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    color: lightgray;
+}
+
+/* Task button inside navbar */
+.add-task-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.add-task-button:hover {
+    background-color: #0056b3;
+}
+
+/* ========== LAYOUT SECTION STYLES ========== */
+section, .container {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* ========== MODAL STYLES ========== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+    position: relative;
+    display: grid;
+    gap: 15px;
+}
+
+.modal-content label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.modal-content button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#manual-time-fields {
+    margin-top: 10px;
+    padding: 10px;
+    border-left: 3px solid #4CAF50;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+#manual-time-toggle {
+    margin-right: 5px;
+}
+
+/* ========== FORM STYLES ========== */
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.form-container button:hover {
+    background-color: #45a049;
+}
+
+.form-container .link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.form-container .link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-container .link a:hover {
+    text-decoration: underline;
+}
+
+/* ========== FLASH MESSAGES ========== */
+.flash-message {
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.flash-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.flash-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* ========== AUTH BUTTONS ========== */
+.auth-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: auto;
+}
+
+.auth-btn {
+    color: white;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.auth-btn.login {
+    background-color: #3498db;
+}
+
+.auth-btn.login:hover {
+    background-color: #2980b9;
+}
+
+.auth-btn.register {
+    background-color: #2ecc71;
+}
+
+.auth-btn.register:hover {
+    background-color: #27ae60;
+}
+
+.auth-btn.logout {
+    background-color: #e74c3c;
+}
+
+.auth-btn.logout:hover {
+    background-color: #c0392b;
+}
+
+/* ========== GOOGLE AUTH/SYNC BUTTONS ========== */
+.google-login-btn,
+.logout-btn,
+.google-disconnect-btn,
+.google-sync-btn,
+.sync-btn {
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    padding: 8px 12px;
+    margin-left: 10px;
+}
+
+.google-login-btn,
+.logout-btn {
+    background-color: #db4437;
+}
+
+.google-login-btn:hover,
+.logout-btn:hover {
+    background-color: #c33d2e;
+}
+
+.google-disconnect-btn {
+    background-color: #f44336;
+}
+
+.google-sync-btn {
+    background-color: #f4b400;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.google-sync-btn:hover {
+    background-color: #db9e00;
+}
+
+.sync-btn {
+    background-color: #4285F4;
+}
+
+.sync-btn:hover {
+    background-color: #357ae8;
+}
+
+/* ========== NOTIFICATION (GLOBAL ALERT) ========== */
+#notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f44336; /* Default: error */
+    color: white;
+    padding: 20px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    z-index: 9999;
+    display: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#notification.success {
+    background-color: #d4edda;
+    color: #155724;
+    border-left-color: #28a745;
+}
+
+/* Utility class for hiding elements */
+.hidden {
+    display: none;
+}
+
+/* Close button for modal dialogs */
+.close-modal-btn {
+    cursor: pointer;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.2s ease;
+    margin-bottom: 10px;
+}
+
+.close-modal-btn:hover {
+    color: #f44336;
+}

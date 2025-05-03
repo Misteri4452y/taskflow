@@ -1,0 +1,45 @@
+/* Styles specific to weekly-schedule.html page */
+
+/* ========== WEEKLY SCHEDULE SECTION ========== */
+#weekly-schedule {
+    overflow-x: auto; /* Enables horizontal scrolling for smaller screens */
+    max-width: 100%;
+    margin: 20px auto;
+}
+
+#weekly-schedule h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ========== SCHEDULE TABLE ========== */
+#weekly-schedule table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensures all columns are equal width */
+    min-width: 800px; /* Prevents table from collapsing on narrow screens */
+}
+
+#weekly-schedule th,
+#weekly-schedule td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Highlight cells with tasks */
+.has-task {
+    background-color: #d1ecf1; /* Light blue background */
+    font-weight: bold;
+}
+
+/* Hover effect for clickable time cells */
+.clickable {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.clickable:hover {
+    background-color: #bee5eb;
+}

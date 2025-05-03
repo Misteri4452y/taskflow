@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}My Tasks - TaskFlow{% endblock %}
+
+{% block style %}
+<!-- Link to custom CSS for task styling -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styleTasks.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Section for filtering tasks by priority -->
+<section id="priority-filter">
+    <h2>Filter by Priority</h2>
+    <ul class="priority-list">
+        {% for level in ["High", "Medium", "Low"] %}
+        <li><a href="#{{ level }}-priority" class="priority-filter">{{ level }} Priority</a></li>
+        {% endfor %}
+    </ul>
+</section>
+
+<!-- Section for displaying tasks by priority -->
+<section id="tasks">
+    <h2>My Tasks</h2>
+
+{% for level in ["High", "Medium", "Low"] %}
+<div id="{{ level }}-priority" class="priority-box">
+    <h3>{{ level }} Priority</h3>
+    <table class="task-table">
+        <thead>
+            <tr>
+                <th>Task Name</th>
+                <th>Description</th>
+                <th>Due Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="{{ level.lower() }}-priority-tasks">
+            <!-- Tasks will be loaded here dynamically -->
+        </tbody>
+    </table>
+</div>
+{% endfor %}
+{% endblock %}
+
+
+{% block scripts %}
+<!-- Main client-side JavaScript for task interaction and rendering -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Default Title{% endblock %}</title> <!-- Page title will be dynamically injected from each page -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> <!-- Main stylesheet -->
+    {% block style %}{% endblock %} <!-- Optional additional styles from child templates -->
+</head>
+<body>
+     <!-- Notification area (controlled by JS) -->
+     <div id="notification" class="hidden"></div>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <div class="logo">TaskFlow</div> <!-- App logo -->
+        </div>
+
+        <div class="navbar-center">
+            <ul class="nav-links">
+                <!-- Main navigation links -->
+                <li><a href="/">Home</a></li>
+                <li><a href="/tasks">My Tasks</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/weekly-schedule">Weekly Schedule</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-right">
+            {% if current_user.is_authenticated %}
+                <!-- Buttons visible only when user is logged in -->
+                {% if google_connected %}
+                    <!-- Google Calendar integration buttons -->
+                    <form method="POST" action="{{ url_for('import_google_tasks') }}">
+                        <button type="submit" class="google-sync-btn">Sync Google Tasks</button>
+                    </form>
+                    <form method="POST" action="{{ url_for('sync_all_tasks_to_google') }}">
+                        <button type="submit" class="google-sync-btn">Sync All to Google Calendar</button>
+                    </form>
+                    <a href="{{ url_for('google_disconnect') }}" class="google-disconnect-btn">Disconnect Google</a>
+                {% else %}
+                    <a href="{{ url_for('google_auth') }}" class="google-login-btn">Login with Google</a>
+                {% endif %}
+
+                <!-- Add Task button (opens modal) -->
+                <button class="add-task-button" onclick="openModal('add-task-modal')">Add Task</button>
+
+                <!-- Logout -->
+                <a href="{{ url_for('logout') }}" class="auth-btn logout">Logout</a>
+            {% else %}
+                <!-- Guest user: show login/register options -->
+                <a href="{{ url_for('login') }}" class="auth-btn login">Login</a>
+                <a href="{{ url_for('register') }}" class="auth-btn register">Register</a>
+                <a href="{{ url_for('google_auth') }}" class="google-login-btn">Login with Google</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- Flash messages from Flask -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-container" style="padding: 10px; max-width: 600px; margin: auto;">
+        {% for category, message in messages %}
+          <div class="flash-message {{ category }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% endwith %}
+
+    <!-- Main page content block -->
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Add Task Modal (opens with JS) -->
+    <div id="add-task-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('add-task-modal')">&times;</span>
+            <h2>Add Task to Schedule</h2>
+            <form id="add-task-form">
+                <label for="task">Task:</label>
+                <input type="text" id="task" required>
+
+                <label for="description">Description:</label>
+                <input type="text" id="description" required>
+
+                <label for="priority">Priority:</label>
+                <select id="priority" required>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+
+                <label for="duration">Duration (in hours):</label>
+                <input type="number" id="duration" min="1" max="8" required>
+
+                <!-- Toggle between manual and automatic scheduling -->
+                <div style="margin-top: 15px; display: flex; align-items: center; gap: 8px;">
+                    <label for="manual-time-toggle" style="margin: 0;">Schedule manually</label>
+                    <input type="checkbox" id="manual-time-toggle">
+                </div>
+
+                <!-- Manual scheduling fields -->
+                <div id="manual-time-fields" style="display: none;">
+                    <label for="day">Day:</label>
+                    <select id="day">
+                        {% for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
+                        <option value="{{ day }}">{{ day }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label for="time">Time:</label>
+                    <select id="time">
+                        {% for hour in range(24) %}
+                        <option value="{{ "%02d:00"|format(hour) }}">{{ "%02d:00"|format(hour) }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- Auto scheduling fields -->
+                <div id="auto-fields">
+                    <label for="deadline-day">Deadline Day:</label>
+                    <select id="deadline-day">
+                        {% for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
+                        <option value="{{ day }}">{{ day }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label for="deadline-time">Deadline Hour:</label>
+                    <select id="deadline-time">
+                        {% for hour in range(24) %}
+                            <option value="{{ "%02d:00"|format(hour) }}">{{ "%02d:00"|format(hour) }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript files -->
+    <script src="{{ url_for('static', filename='modal-toggle.js') }}" defer></script> <!-- Logic for switching between manual/auto task inputs -->
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script> <!-- Main frontend logic (fetching tasks, submitting, etc.) -->
+    {% block scripts %}{% endblock %}
+</body>
+</html>

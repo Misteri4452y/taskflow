@@ -1,0 +1,88 @@
+/* Styles specific to tasks.html page */
+
+/* ========== PRIORITY FILTER SECTION ========== */
+#priority-filter {
+    margin-bottom: 20px;
+}
+
+.priority-list {
+    list-style: none;
+    padding: 0;
+}
+
+.priority-list li {
+    margin-bottom: 5px;
+}
+
+.priority-filter {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.priority-filter:hover {
+    text-decoration: underline;
+}
+
+/* ========== PRIORITY BOX STYLING ========== */
+/* Each box for High, Medium, Low priority */
+.priority-box {
+    background-color: #ffffff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.priority-box h3 {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    margin: -20px -20px 10px -20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+}
+
+/* ========== TASK TABLE ========== */
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.task-table th,
+.task-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.task-table th {
+    background-color: #343a40;
+    color: white;
+}
+
+.task-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.task-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* ========== ACTION BUTTONS ========== */
+/* Used in the task action column */
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}

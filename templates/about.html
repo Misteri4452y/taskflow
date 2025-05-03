@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+About - TaskFlow
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styleAbout.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- About page section: describes what the app is and why it exists -->
+<section class="about">
+    <h1>About TaskFlow</h1>
+    <p>
+        TaskFlow is a weekly task management web application designed to help you schedule tasks manually or automatically,
+        prioritize them, and synchronize them with your Google Calendar.
+    </p>
+</section>
+
+<!-- Developer note section: for attribution or future team members -->
+<section class="team">
+    <h2>Who Built This?</h2>
+    <p>
+        TaskFlow was developed as a project to practice full-stack development using Flask, SQLite, HTML/CSS, and JavaScript,
+        with optional Google Calendar API integration.
+    </p>
+</section>
+{% endblock %}
