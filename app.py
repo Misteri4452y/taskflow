@@ -602,8 +602,7 @@ def sync_all_tasks_to_google():
     return redirect(url_for("weekly_schedule"))
 
 def initialize_all_users_availability():
-    """Load all users' tasks into memory when the server starts."""
-    print("[INFO] Initializing users' availability maps...")
+    """Load all users' tasks into memory when the server starts.""" 
 
     db = TaskDB()
 
@@ -625,8 +624,6 @@ def initialize_all_users_availability():
                 start_time=task['time'],
                 duration=int(task['duration'])
             )
-        
-        print(f"[INFO] Loaded availability for user ID {user_id}")
 
     print("[INFO] Finished loading all users' availability.")
 
