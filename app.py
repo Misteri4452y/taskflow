@@ -178,7 +178,7 @@ def register():
         # Check if user already exists
         if get_user_by_username(username):
             flash("Username already exists", "error")
-        elif not add_user(username, hashed_password):
+        elif not add_user(username, password):
             flash("Could not create user", "error")
         else:
             flash("Registration successful. Please login.", "success")

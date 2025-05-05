@@ -17,6 +17,7 @@ def get_calendar_flow():
     )
     auth_url, _ = flow.authorization_url(prompt='consent')
     return {'auth_url': auth_url, 'flow': flow}
+    
 
 def save_credentials(flow, authorization_response_url, user_id):
     """Saves OAuth2 credentials to a user-specific token file."""
